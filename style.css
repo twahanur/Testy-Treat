@@ -1,0 +1,14 @@
+.navbar-brand img{
+    width: 100px;
+}
+.single-item-image{
+    width: 100%;
+    padding: 15px;
+    border-radius: 30px;
+}
+.items-image img{
+    transition: all.3s;
+}
+.items-image:hover img{
+    filter:brightness(80%);
+}
