@@ -1,44 +1,3 @@
-// display food in welcome page
-// const welcomeDisplay = idCategory => {
-//     const url = 
-    // fetch(`https://www.themealdb.com/api/json/v1/1/categories.php`)
-    //     .then(response => response.json())
-    //     .then(data => welcomeDisplay(data))
-
-    //     const welcomeDisplay = foodId =>{
-    //         for (let i = 0; i < foodId.length; i++) {
-    //             const idNumber = foodId[i];
-    //             console.log(idNumber.strCategory)
-                
-    //         }
-
-    //     }
-
-
-
-// const displayLandingPage = foods => {
-//     const row = document.getElementById('row')
-//     row.innerHTML = ""
-
-//     foods.forEach(food =>{
-//         const column = document.createElement('div')
-//         column.className = "col-md-3 food-item mt-4"
-
-//         let foodContent = `
-//         <div = welcomeDisplay('${food.idCategory}') class="items-image card w-100 overflow-hidden">
-//             <img src="${food.strMealThumb}" class="card-img-top" alt="...">
-//             <div class="card-body">
-//                 <h5 class="card-title text-center">${food.strMeal}</h5>
-//             </div>
-//         </div>
-//         `
-//         column.innerHTML = foodContent
-//         row.appendChild(column)
-//     });
-// }
-
-
-
 // get data from API 
 const searchFood = searchInput => {
     if (searchInput) {
@@ -79,6 +38,8 @@ const searchFood = searchInput => {
 
 //function for getting search item
 document.getElementById('searchInput').addEventListener('submit', function (gettingInput) {
+    const hideArrow = document.getElementById('uperArrow');
+    hideArrow.style.display = "none";
     gettingInput.preventDefault()
     const searchInput = document.getElementById('searchInputText').value
     searchFood(searchInput)
@@ -139,8 +100,8 @@ const displayDetails = foods => {
         </div>
         `
         modalBody.innerHTML = foodDetails
-        const foodModal = new bootstrap.Modal(document.getElementById('foodModal'))
-        foodModal.show()
+        const foodBox = new bootstrap.Modal(document.getElementById('foodBox'))
+        foodBox.show()
     });
 }
 
@@ -151,7 +112,7 @@ const ingredientList = food => {
     for (let i = 1; i <= 20; i++) {
         let strIngredient = 'strIngredient' + i
         if (food[strIngredient]) {
-            li = li + `<li> ${food[strIngredient]}</li>`;
+            li = li + `<li><span><i class="fas fa-check-square text-warning"></i></span> ${food[strIngredient]}</li>`;
         }
     }
     return li
