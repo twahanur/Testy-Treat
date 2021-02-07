@@ -1,5 +1,6 @@
+
 .navbar-brand img{
-    width: 100px;
+ max-width: 100px;
 }
 .single-item-image{
     width: 100%;
@@ -11,4 +12,9 @@
 }
 .items-image:hover img{
     filter:brightness(80%);
+}
+#uperArrow img{
+    -ms-transform: rotate(180deg); 
+    -webkit-transform: rotate(180deg);  
+    transform: rotate(180deg); 
 }
